@@ -1,0 +1,4 @@
+#https://github.com/jorgenschaefer/elpy
+jedi
+flake8
+autopep8
