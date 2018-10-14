@@ -1,0 +1,12 @@
+from datetime import date
+
+from .exceptions import BirthDateException
+
+
+def calculate_years_old(birth_date: date) -> int:
+    today_date = date.today()
+    if birth_date > today_date:
+        raise BirthDateException("It's not possible be born in the future")
+    return today_date.year - birth_date.year - (
+        (today_date.month, today_date.day) < (birth_date.month, birth_date.day)
+    )
