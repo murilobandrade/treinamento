@@ -1,7 +1,7 @@
 {
-    "python.pythonPath": "/home/mandrade/bin/py3_infocont/bin/python",
     "python.linting.pylintArgs": [
     "--load-plugins",
     "pylint_django"
-    ]
+    ],
+    "python.linting.pylintEnabled": false
 }

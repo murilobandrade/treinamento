@@ -1,15 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
 <html lang="pt-BR">
     <head>
+        <meta charset="utf-8"/>
         <title>
         {% block title %}
             People app
-        {% endblock %}
+        {% endblock title %}
         </title>
+        <link rel="stylesheet" href="{% static 'pessoas/css/main.css' %}" type="text/css"/>
     </head>
     <body>
-        <h1>Welcome to the people app</h1>
-        {% block content %}
-            We love all the people!
-        {% endblock content %}
+        <div class="wrapper">
+            <div class="box header">Header</div>
+            <div class="box sidebar">Sidebar</div>
+            <div class="box content">Content
+                {% block content %}
+                    We love all the people!
+                {% endblock content %}
+                <br/> More content than we had before so this column is now quite tall.</div>
+            <div class="box footer">Footer</div>
+          </div>
     </body>
 </html>
