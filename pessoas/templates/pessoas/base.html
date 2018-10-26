@@ -11,15 +11,28 @@
         <link rel="stylesheet" href="{% static 'pessoas/css/main.css' %}" type="text/css"/>
     </head>
     <body>
-        <div class="wrapper">
-            <div class="box header">Header</div>
-            <div class="box sidebar">Sidebar</div>
-            <div class="box content">Content
-                {% block content %}
-                    We love all the people!
-                {% endblock content %}
-                <br/> More content than we had before so this column is now quite tall.</div>
-            <div class="box footer">Footer</div>
-          </div>
+        <header class="box header">
+            <button class="openbtn" onclick="openNav()">&#9776; Menu</button> 
+        </header>
+        <!-- <div class="box header">
+            <button class="js-active-menu btn-icon">
+                <svg class="icon" viewBox="0 0 20 20">
+                    <path d="M0 3h20v2h-20v-2zM0 9h20v2h-20v-2zM0 15h20v2h-20v-2z"></path>
+                </svg>
+            </button>
+            HEADER
+        </div> -->
+        <aside class="sidepanel __active" id="mainSidepanel">
+            <nav class="menu">
+                <ul>
+                <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Clients</a></li>
+                <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
     </body>
+    <script src="{% static 'pessoas/js/main.js' %}"></script>
 </html>
