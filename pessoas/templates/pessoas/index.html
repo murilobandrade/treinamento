@@ -3,5 +3,11 @@
 {% block title %}List content with all the people{% endblock title %}
 
 {% block content %}
-    Aqui vou colocar o conteudo!
+    {% if people_list %}
+    {% for person in people_list %}
+    <li>{{person.nome}}</li>
+    {% endfor %}
+    {% else %}
+    Nenhuma pessoa encontrada!
+    {% endif %}
 {% endblock content %}
