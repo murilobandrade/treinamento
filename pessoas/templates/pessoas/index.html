@@ -1,13 +1,27 @@
 {% extends "pessoas/base.html" %}
+{% load static %}
 
 {% block title %}List content with all the people{% endblock title %}
 
 {% block content %}
-    {% if people_list %}
-    {% for person in people_list %}
-    <li>{{person.nome}}</li>
-    {% endfor %}
-    {% else %}
-    Nenhuma pessoa encontrada!
-    {% endif %}
+{% if people_list %}
+<div class="w3-container">
+    <h2>People List</h2>
+    <ul class="w3-ul w3-card-4">
+        {% for person in people_list %}
+        <li class="w3-bar">
+            <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span>
+            <img src="{% static 'pessoas/img/avatar2.png' %}" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+            <div class="w3-bar-item">
+                <span class="w3-large">{{ person.nome }}</span><br>
+                <span>{{ person.data_nascimento }}</span>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% else %}
+There are no people
+{% endif %}
+
 {% endblock content %}
