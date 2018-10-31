@@ -20,3 +20,6 @@ class PessoaRn(Pessoa):
             (today_date.month, today_date.day) <
             (self.birth_date.month, self.birth_date.day)
         )
+    
+    class Meta:
+        proxy = True
